@@ -1,9 +1,8 @@
 const input = require('readline-sync');
-
 // TODO 2: modify your quiz app to ask 5 questions //
 // TODO 1.1a: Define candidateName // 
-let candidateName = "";
-// TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
+let candidateName ="";
+// TODO 1.2a: Define question, correctAnswer, and candidateAnswer 
 let question = "Who was the first American woman in space? " ;
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
@@ -36,8 +35,7 @@ function gradeQuiz(candidateAnswers) {
          if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
          answerCount++;
       } 
-  }  
-     // console.log("answerCount: "+answerCount);
+  } 
    grade = (answerCount/ questions.length) * 100;
    if(grade >= 80){
      console.log(">>> Overall Grade: "+grade+"%"+"(" +answerCount+" of "+questions.length+" responses correct"+")"+" <<<<");
@@ -48,15 +46,12 @@ function gradeQuiz(candidateAnswers) {
    }
   return grade;
 }
-
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
-
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
 module.exports = {
