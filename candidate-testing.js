@@ -6,14 +6,20 @@ let candidateName = "";
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ["Who was the first American woman in space?", "True or false: 5000 meters = 5 kilometers.", "(5 + 3)/2 * 10 = ?", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
-let correctAnswers = ["Sally Ride", "True", "40", "Trajectory", "3"];
+let questions = ["Who was the first American woman in space? ", 
+                "True or false: 5000 meters == 5 kilometers. ", 
+                "(5 + 3)/2 * 10 = ? ", 
+                "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
+                "What is the minimum crew size for the ISS? "];
+let correctAnswers = ["Sally Ride","True","40","Trajectory","3"];
 let candidateAnswers = [];
+
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
   candidateName = input.question("What is the name of the Candidate? ");
-  console.log("Candidate Name: " + candidateName);
+  console.log("Hello! "+candidateName);
 }
+
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < questions.length; i++) {
@@ -23,9 +29,11 @@ function askQuestion() {
     console.log("Correct Answer: " + correctAnswers[i]);
   }
 }
+
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let grade; let answerCount = 0;
+  let grade = 0; 
+  let answerCount = 0;
   for (let i = 0; i < questions.length; i++) {
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       answerCount++;
@@ -33,14 +41,15 @@ function gradeQuiz(candidateAnswers) {
   }
   grade = (answerCount / questions.length) * 100;
   if (grade >= 80) {
-    console.log(">>> Overall Grade: " + grade + "%" + "(" + answerCount + " of " + questions.length + " responses correct" + ")" + " <<<<");
+    console.log(">>> Overall Grade: "+grade+"%"+"(" + answerCount + " of "+questions.length+" responses correct" + ")"+" <<<<");
     console.log(">>>> Status: PASSED <<<<");
   } else {
-    console.log(">>> Overall Grade: " + grade + "%" + "(" + answerCount + " of " + questions.length + " responses correct" + ")" + " <<<<");
+    console.log(">>> Overall Grade: " + grade + "%" + "(" + answerCount+" of "+questions.length+" responses correct"+")"+ " <<<<");
     console.log(">>> Status: FAILED <<<");
   }
   return grade;
 }
+
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
