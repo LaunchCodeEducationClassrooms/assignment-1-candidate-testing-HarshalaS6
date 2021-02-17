@@ -11,13 +11,13 @@ let questions = ["Who was the first American woman in space? ",
                 "(5 + 3)/2 * 10 = ? ", 
                 "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
                 "What is the minimum crew size for the ISS? "];
-let correctAnswers = ["Sally Ride","True","40","Trajectory","3"];
+let correctAnswers = ["Sally Ride", "True", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
   candidateName = input.question("What is the name of the Candidate? ");
-  console.log("Hello! "+candidateName);
+  console.log("Hello! "+ candidateName);
 }
 
 function askQuestion() {
@@ -41,10 +41,10 @@ function gradeQuiz(candidateAnswers) {
   }
   grade = (answerCount / questions.length) * 100;
   if (grade >= 80) {
-    console.log(">>> Overall Grade: "+grade+"%"+"(" + answerCount + " of "+questions.length+" responses correct" + ")"+" <<<<");
+    console.log(">>> Overall Grade: "+ grade + "%" + "(" + answerCount + " of "+questions.length+" responses correct" + ")"+" <<<<");
     console.log(">>>> Status: PASSED <<<<");
   } else {
-    console.log(">>> Overall Grade: " + grade + "%" + "(" + answerCount+" of "+questions.length+" responses correct"+")"+ " <<<<");
+    console.log(">>> Overall Grade: " + grade + "%" + "(" + answerCount +" of "+ questions.length + " responses correct" + ")"+ " <<<<");
     console.log(">>> Status: FAILED <<<");
   }
   return grade;
